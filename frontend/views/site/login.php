@@ -13,35 +13,6 @@ use yii\helpers\Url;
 $this->title = 'Авторизация';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<!--<div class="site-login">-->
-<!--    <h1>--><?//= Html::encode($this->title) ?><!--</h1>-->
-<!---->
-<!--    <p>Please fill out the following fields to login:</p>-->
-<!---->
-<!--    <div class="row">-->
-<!--        <div class="col-lg-5">-->
-<!--            --><?php //$form = ActiveForm::begin(['id' => 'login-form']); ?>
-<!---->
-<!--                --><?//= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-<!---->
-<!--                --><?//= $form->field($model, 'password')->passwordInput() ?>
-<!---->
-<!--                --><?//= $form->field($model, 'rememberMe')->checkbox() ?>
-<!---->
-<!--                <div style="color:#999;margin:1em 0">-->
-<!--                    If you forgot your password you can --><?//= Html::a('reset it', ['site/request-password-reset']) ?><!--.-->
-<!--                </div>-->
-<!---->
-<!--                <div class="form-group">-->
-<!--                    --><?//= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-<!--                </div>-->
-<!---->
-<!--            --><?php //ActiveForm::end(); ?>
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
-<!-- Login form -->
 
 <?php $form = ActiveForm::begin([
     'id' => 'login-form',
@@ -54,17 +25,17 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="text-center mb-3">
                 <?= Html::img('/images/logo_text.png') ?>
 <!--                <h5 class="mb-0">Авторизация</h5>-->
-                <span class="d-block text-muted">Авторизация</span>
+<!--                <span class="d-block text-muted">Авторизация</span>-->
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <?= $form->field($model, 'username', [
+                <?= $form->field($model, 'phone', [
                         'errorOptions' => [
                             'class' => 'form-text text-danger'
                         ]
                     ])
-                    ->widget(MaskedInput::classname(), [
-                        'mask'          => '+9 (999) 999 99 99',
+                    ->widget(MaskedInput::className(), [
+                        'mask'          => '+99999999999',
                         'options'       => [
                             'class'       => 'form-control',
                             'placeholder' => 'Телефон',
@@ -72,6 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ])
                     ->label(false);
                 ?>
+
                 <div class="form-control-feedback">
                     <i class="icon-phone2 text-muted"></i>
                 </div>
@@ -89,8 +61,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         'placeholder' => 'Пароль',
                         'type'        => 'password'
                     ])
-                    ->label(false)
-                ?>
+                    ->label(false) ?>
+
                 <div class="form-control-feedback">
                     <i class="icon-lock2 text-muted"></i>
                 </div>
@@ -99,14 +71,19 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="form-group d-flex align-items-center">
                 <div class="form-check mb-0">
                     <label class="form-check-label">
-<!--                        --><?//= $form
-//                            ->field($model, 'rememberMe')->checkbox([
-//                                'class'     => 'form-input-styled',
-//                                'data-fouc' => ''
-//                            ])
-//                            ->label(false)
-//                        ?>
-                        <input type="checkbox" name="remember" class="form-input-styled" checked data-fouc>
+                        <?= $form
+                            ->field($model, 'rememberMe', [
+                                'errorOptions' => [
+                                    'class' => 'd-none'
+                                ],
+                                'template'  => "{label}"
+                            ])
+                            ->checkbox([
+                                'class'     => 'form-input-styled',
+                                'checked'   => false,
+                                'data-fouc' => ''
+                            ])
+                            ->label(false) ?>
                         Запомнить
                     </label>
                 </div>
@@ -117,8 +94,10 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
 
             <div class="form-group">
-
-                <button type="submit" class="btn btn-primary btn-block">Войти <i class="icon-circle-right2 ml-2"></i></button>
+                <?= Html::submitButton(
+                    'Войти <i class="icon-enter ml-2"></i>', [
+                    'class' => 'btn btn-primary btn-block'
+                ]) ?>
             </div>
 
             <div class="form-group text-center text-muted content-divider">
@@ -126,8 +105,12 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
 
             <div class="form-group text-center">
-                <button type="button" class="btn btn-outline bg-indigo border-indigo text-indigo btn-icon rounded-round border-2"><i class="icon-facebook"></i></button>
-                <button type="button" class="btn btn-outline bg-pink-300 border-pink-300 text-pink-300 btn-icon rounded-round border-2 ml-2"><i class="icon-google-plus"></i></button>
+                <button type="button" class="btn btn-outline bg-indigo border-indigo text-indigo btn-icon rounded-round border-2">
+                    <i class="icon-facebook"></i>
+                </button>
+                <button type="button" class="btn btn-outline bg-pink-300 border-pink-300 text-pink-300 btn-icon rounded-round border-2 ml-2">
+                    <i class="icon-google-plus"></i>
+                </button>
             </div>
 
             <div class="form-group text-center text-muted content-divider">
@@ -138,7 +121,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 <a href="#" class="btn btn-light btn-block">Регистрация</a>
             </div>
 
-            <span class="form-text text-center text-muted">Авторизовавшись, вы соглашаетесь с <a href="#">Договор оферты</a> и <br/> <a href="#">Политика конфиденциальности</a></span>
+            <span class="form-text text-center text-muted">
+                Авторизовавшись, вы соглашаетесь с
+                <?= Html::a('Договор оферты', '#') ?> <br/>
+                <?= Html::a('Политика конфиденциальности', '#') ?>
+            </span>
         </div>
     </div>
 <?php ActiveForm::end() ?>
