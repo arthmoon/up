@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\User;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -74,6 +75,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        print_r(Yii::$app->user->identity);
+        echo "<br/>";
+        die;
         return $this->render('index');
     }
 
