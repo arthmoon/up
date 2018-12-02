@@ -222,4 +222,19 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionCacheSet($key = 'key', $value = 'value', $duration = 10)
+    {
+        if (Yii::$app->cache->set($key, $value, 10))
+            echo "set success";
+        else
+            echo "error";
+        die;
+    }
+
+    public function actionCacheGet($key = 'key')
+    {
+        echo Yii::$app->cache->get($key);
+        die;
+    }
 }
