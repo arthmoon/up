@@ -105,7 +105,7 @@ AppAsset::register($this);
                                         <img src="/common/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
                                     </div>
                                     <div class="media-body">
-                                        <a href="#" class="media-title font-weight-semibold">Марат Нургалиев</a>
+                                        <a href="#" class="media-title font-weight-semibold">Нурсултан Ибрагимов</a>
                                         <span class="d-block text-muted font-size-sm">Subaru Outback 2011</span>
                                     </div>
                                     <div class="ml-3 align-self-center"><span class="badge badge-mark border-success"></span></div>
