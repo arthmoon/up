@@ -16,61 +16,12 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>Боди массаж астана</title>
     <meta name="language" content="ru"/>
-    <meta name="viewport" content="width=960"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <!--css1-->
 
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
-    <style type="text/css">
-        .user_form:not(.horizontal) .user_form_submit {
-            -webkit-margin-before: 4px;
-            padding-bottom: 0
-        }
-
-        .user_form .inp {
-            width: 100%;
-            margin: 0;
-            padding-left: 10px;
-        }
-
-        .user_form .header_text {
-            -webkit-margin-after: 18px;
-        }
-    </style>
-    <style type="text/css">
-        body, #site_wrapper1 {
-            min-width: 1170px;
-        }
-
-        .blk_section_inner {
-            width: 1170px;
-        }
-
-        body.tablet.non-pc {
-            min-width: 800px;
-        }
-
-        body.tablet.non-pc .blk_section_inner {
-            width: 800px;
-        }
-
-        body.tablet.non-pc .section_popup_wnd {
-            width: 400px !important;
-        }
-
-        body.mobile370.non-pc {
-            min-width: 370px;
-        }
-
-        body.mobile370.non-pc .blk_section_inner {
-            width: 370px;
-        }
-
-        body.mobile370.non-pc .section_popup_wnd {
-            width: 300px !important;
-        }
-    </style>
     <link href="css/p.css" type="text/css" rel="stylesheet"/>
     <link href="css/s.css" type="text/css" rel="stylesheet"/>
     <link href="css/style.css" type="text/css" rel="stylesheet"/>
