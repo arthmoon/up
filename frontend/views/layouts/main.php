@@ -90,7 +90,7 @@ AppAsset::register($this);
                 <li class="nav-item dropdown">
                     <a href="#" class="navbar-nav-link dropdown-toggle caret-0" data-toggle="dropdown">
                         <i class="icon-medal"></i>
-                        <span class="d-md-none ml-2">Избранные</span>
+                        <span class="d-md-none ml-2">Избранные111</span>
                     </a>
 
                     <div class="dropdown-menu dropdown-content wmin-md-300">
